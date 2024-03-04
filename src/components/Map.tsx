@@ -4,6 +4,7 @@ import { getFormattedGironDetails } from "../utils";
 
 const DEFAULT_CENTER = { lat: 46.69425890210601, lng: 6.876708506648145 };
 const DEFAULT_ZOOM = 10;
+let currentInfoWindow: google.maps.InfoWindow | null = null;
 
 const addGironMarker = ({
   giron,
@@ -33,7 +34,16 @@ const addGironMarker = ({
   });
 
   marker.addListener("click", () => {
+    // Close the currently open InfoWindow
+    if (currentInfoWindow) {
+      currentInfoWindow.close();
+    }
+
+    // Open the clicked marker's InfoWindow
     infoWindow.open(map, marker);
+
+    // Update the currently open InfoWindow
+    currentInfoWindow = infoWindow;
   });
 };
 
