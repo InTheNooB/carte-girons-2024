@@ -20,6 +20,10 @@ const addGironMarker = ({
 
   const { imageSrc, fromDate, toDate } = getFormattedGironDetails(giron);
 
+  const link = giron.website
+    ? `<a href=${giron.website} target="_blank" rel="noreferrer">${giron.website}</a>`
+    : "";
+
   const infoWindow = new google.maps.InfoWindow({
     content: `  <div class="flex flex-row gap-3 text-neutral-950">
     <img src=${imageSrc} alt="flag" class="w-10 object-contain" />
@@ -29,6 +33,7 @@ const addGironMarker = ({
       <p>
         du ${fromDate} au ${toDate}
       </p>
+      ${link}
     </div>
   </div>`,
   });

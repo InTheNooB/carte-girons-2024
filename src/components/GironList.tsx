@@ -13,6 +13,11 @@ const GironDetails: FC<{ giron: Giron }> = ({ giron }) => {
         <p>
           du {fromDate} au {toDate}
         </p>
+        {giron.website && (
+          <a href={giron.website} target="_blank" rel="noreferrer">
+            {giron.website}
+          </a>
+        )}
       </div>
     </div>
   );
