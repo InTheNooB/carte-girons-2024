@@ -46,12 +46,12 @@ const GironList: FC<{ girons: Giron[] }> = ({ girons }) => {
   );
 
   return (
-    <div className="bg-neutral-800 p-3 mt-2 gap-10 flex flex-col">
+    <div className="bg-primary p-5 mt-2 gap-10 flex flex-col">
       {Object.entries(gironsByMonth).map(([month, girons]) => {
         return (
           <div key={month} className="flex flex-col w-full justify-center">
             <MonthsSeparator month={parseInt(month)} />
-            <div className="flex flex-col gap-8 mt-4">
+            <div className="flex flex-row gap-y-8 gap-x-20 mt-4 flex-wrap md:justify-center">
               {girons.map((giron) => {
                 return <GironDetails key={giron.city} giron={giron} />;
               })}

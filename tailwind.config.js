@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         'mono': ['JetBrains Mono', 'monospace'],
       },
+      backgroundColor: {
+        "primary": "#242424"
+      },
     },
   },
   plugins: [],
