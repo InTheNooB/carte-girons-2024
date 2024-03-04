@@ -17,11 +17,13 @@ const GoogleMaps = () => {
       new window.google.maps.Map(ref.current, {
         center: DEFAULT_CENTER,
         zoom: DEFAULT_ZOOM,
+        gestureHandling: "greedy",
+        disableDefaultUI: true,
       });
     }
   }, [ref]);
 
-  return <div ref={ref} style={{ width, height }} />;
+  return <div className="fixed" ref={ref} style={{ width, height }} />;
 };
 
 export default GoogleMaps;
