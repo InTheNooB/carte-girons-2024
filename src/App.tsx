@@ -30,7 +30,7 @@ const girons: Giron[] = [
     month: 8,
     details: "Cantonale FVJC",
     city: "givrins",
-    fromDate: new Date(2024, 6, 1),
+    fromDate: new Date(2024, 6, 31),
     toDate: new Date(2024, 7, 18),
     latlng: { lat: 46.42888428601185, lng: 6.203337331590857 },
     website: "https://givrins2024.ch/",
@@ -63,6 +63,7 @@ const girons: Giron[] = [
     fromDate: new Date(2024, 6, 3),
     toDate: new Date(2024, 6, 7),
     latlng: { lat: 46.61783287608617, lng: 7.025067118413992 },
+    website: "https://rjg-2024.ch/",
   },
   {
     canton: "FR",
