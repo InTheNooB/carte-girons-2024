@@ -17,7 +17,7 @@ export const formatDate = (date: Date) => {
 
 export const getFormattedGironDetails = (giron: Giron) => {
   const fromDate = formatDate(giron.fromDate);
-  const toDate = formatDate(giron.toDate);
+  const toDate = giron.toDate ? formatDate(giron.toDate) : null;
   const imageSrc = giron.canton === "VD" ? VDFlag : FRFlag;
 
   return {

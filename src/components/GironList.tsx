@@ -4,15 +4,21 @@ import { getFormattedGironDetails, monthToName } from "../utils";
 
 const GironDetails: FC<{ giron: Giron }> = ({ giron }) => {
   const { imageSrc, fromDate, toDate } = getFormattedGironDetails(giron);
+  let dates = "";
+
+  if (!toDate) {
+    dates = `le ${fromDate}`;
+  } else {
+    dates = `du ${fromDate} au ${toDate}`;
+  }
+
   return (
     <div className="flex flex-row gap-3">
       <img src={imageSrc} alt="flag" className="w-10 object-contain" />
       <div>
         <h2 className="uppercase font-black text-xl">{giron.city}</h2>
         <p>{giron.details}</p>
-        <p>
-          du {fromDate} au {toDate}
-        </p>
+        <p>{dates}</p>
         {giron.website && (
           <a href={giron.website} target="_blank" rel="noreferrer">
             {giron.website}

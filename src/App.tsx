@@ -7,7 +7,7 @@ export type Giron = {
   canton: "VD" | "FR";
   month: number;
   fromDate: Date;
-  toDate: Date;
+  toDate?: Date;
   city: string;
   details: string;
   latlng: google.maps.LatLngLiteral;
@@ -58,7 +58,7 @@ const girons: Giron[] = [
   {
     canton: "FR",
     month: 7,
-    details: "Giron de la Gruyère",
+    details: "Rencontre des jeunesses gruériennes",
     city: "Vuadens",
     fromDate: new Date(2024, 6, 3),
     toDate: new Date(2024, 6, 7),
@@ -74,6 +74,26 @@ const girons: Giron[] = [
     toDate: new Date(2024, 7, 18),
     latlng: { lat: 46.57665636882984, lng: 6.869013742944149 },
     website: "https://st-martin2024.ch/",
+  },
+  {
+    canton: "VD",
+    month: 7,
+    details: "Rencontres FVJC à RMC",
+    city: "Jorat-Mézières",
+    fromDate: new Date(2024, 6, 10),
+    toDate: new Date(2024, 6, 14),
+    latlng: { lat: 46.59587116517112, lng: 6.7702290072024365 },
+    website: "https://rmc2024.ch/",
+  },
+  {
+    canton: "VD",
+    month: 5,
+    details: "Rallye FVJC",
+    city: "Bioley-Magnoux & Ogens",
+    fromDate: new Date(2024, 4, 15),
+    toDate: new Date(2024, 4, 19),
+    latlng: { lat: 46.72696696961714, lng: 6.711366477589637 },
+    website: "http://rallye2024.ch/",
   },
 ];
 const App = () => {

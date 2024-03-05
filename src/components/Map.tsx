@@ -19,6 +19,13 @@ const addGironMarker = ({
   });
 
   const { imageSrc, fromDate, toDate } = getFormattedGironDetails(giron);
+  let dates = "";
+
+  if (!toDate) {
+    dates = `le ${fromDate}`;
+  } else {
+    dates = `du ${fromDate} au ${toDate}`;
+  }
 
   const link = giron.website
     ? `<a href=${giron.website} target="_blank" rel="noreferrer">${giron.website}</a>`
@@ -30,9 +37,7 @@ const addGironMarker = ({
     <div>
       <h2 class="uppercase font-black text-xl">${giron.city}</h2>
       <p>${giron.details}</p>
-      <p>
-        du ${fromDate} au ${toDate}
-      </p>
+      <p>${dates}</p>
       ${link}
     </div>
   </div>`,
